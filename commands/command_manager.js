@@ -3,6 +3,7 @@ const ping = require('./ping_command');
 const kick = require('./kick_command');
 const ban = require('./ban_command');
 const unban = require('./unban_command');
+const roll = require('./roll_command');
 
 /* This class parses a user's message into a command, and provides the needed
     information to each command.  Messages are passed into all commands, as response/action
@@ -21,6 +22,7 @@ class CommandManager {
             let tokens = message.content.split(" ");
             let command = tokens.shift().substring(1);
 
+            // Keep commands in alphabetical order
             switch(command){
                 case 'ban':
                     ban(message)
@@ -40,6 +42,10 @@ class CommandManager {
 
                 case 'ping':
                     ping(message)
+                    break;
+
+                case 'roll':
+                    roll(tokens, message)
                     break;
 
                 case 'unban':
