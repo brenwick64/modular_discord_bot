@@ -1,5 +1,8 @@
 const gif = require('./gif_command');
 const ping = require('./ping_command');
+const kick = require('./kick_command');
+const ban = require('./ban_command');
+const unban = require('./unban_command');
 
 /* This class parses a user's message into a command, and provides the needed
     information to each command.  Messages are passed into all commands, as response/action
@@ -19,6 +22,10 @@ class CommandManager {
             let command = tokens.shift().substring(1);
 
             switch(command){
+                case 'ban':
+                    ban(message)
+                    break;
+
                 case 'gif':
                     let key = tokens.toString()
                     gif(key, message)
@@ -27,8 +34,17 @@ class CommandManager {
                 case 'help':
                     break;
 
+                case 'kick':
+                    kick(message)
+                    break;
+
                 case 'ping':
                     ping(message)
+                    break;
+
+                case 'unban':
+                    let id_string = tokens.toString()
+                    unban(message, id_string)
                     break;
 
                 default:
