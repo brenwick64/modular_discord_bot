@@ -2,7 +2,7 @@ module.exports = async function(message) {
 
     if (message.member.hasPermission("BAN_MEMBERS")){
         // Ignores attempts to ban non-users
-        if (message.mentions.user.first()){
+        if (message.mentions.users.first()){
             let user = message.mentions.users.first();
             try{
                 await message.guild.members.cache.get(user.id).ban()
