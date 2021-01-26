@@ -37,6 +37,4 @@ class ProfanityFilter {
     }
 }
 
-
-
 module.exports = ProfanityFilter;
