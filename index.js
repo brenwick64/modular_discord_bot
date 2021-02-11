@@ -10,6 +10,7 @@ const botChannel = process.env.BOT_CHANNEL
 // Autonomous Features
 const ProfanityFilter = require('./profanity_filter')
 const profanity = new ProfanityFilter(mode='green');
+
 //  Commands
 const CommandManager = require('./commands/command_manager')
 const commands = new CommandManager(delimeter='!');

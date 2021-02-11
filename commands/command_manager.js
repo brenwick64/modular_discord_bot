@@ -4,6 +4,8 @@ const kick = require('./kick_command');
 const ban = require('./ban_command');
 const unban = require('./unban_command');
 const roll = require('./roll_command');
+const help = require('./help__command');
+const invite = require('./invite_command');
 
 /* This class parses a user's message into a command, and provides the needed
     information to each command.  Messages are passed into all commands, as response/action
@@ -38,6 +40,11 @@ class CommandManager {
                     break;
 
                 case 'help':
+                    help(message)
+                    break;
+
+                case 'invite':
+                    invite(message)
                     break;
 
                 case 'kick':
