@@ -4,7 +4,7 @@ const kick = require('./kick_command');
 const ban = require('./ban_command');
 const unban = require('./unban_command');
 const roll = require('./roll_command');
-const help = require('./help__command');
+const help = require('./help_command');
 const invite = require('./invite_command');
 
 /* This class parses a user's message into a command, and provides the needed
