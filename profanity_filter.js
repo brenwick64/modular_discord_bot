@@ -1,7 +1,12 @@
 class ProfanityFilter {
 
     constructor(mode) {
-        // red (Bans offenders), yellow (kicks offenders), green (warns offenders) - All will delete offensive message
+        /*
+        Red - Bans offenders, 
+        Yellow - kicks offenders, 
+        Green - warns offenders 
+        All - deletes offensive message
+        */
         this.mode = mode;
         // Add more offensive words at your leisure :)
         this.badWords = ['fiddlesticks', 'poppycock', 'balderdash', 'bullcorn']
