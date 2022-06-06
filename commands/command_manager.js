@@ -6,6 +6,7 @@ const unban = require('./unban_command');
 const roll = require('./roll_command');
 const help = require('./help_command');
 const invite = require('./invite_command');
+const clear = require('./clear_command');
 
 /* This class parses a user's message into a command, and provides the needed
     information to each command.  Messages are passed into all commands, as response/action
@@ -65,7 +66,7 @@ class CommandManager {
                     break;
 
                 default:
-                    message.reply('Unknown Command: Please type \'!help\' for a list of commands.')
+                    message.reply(`Unknown command '${command}' - Please type \'!help\' for a list of commands.`)
                     break;
             }
         }
