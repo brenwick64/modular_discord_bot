@@ -1,6 +1,9 @@
 // Imports
-const { Client, GatewayIntentBits } = require('discord.js')
+const { Client } = require('discord.js')
 const client = new Client();
+const express = require('express')
+const app = express()
+const port = 10000
 
 // Environment Variables
 require('dotenv').config()
@@ -35,4 +38,15 @@ client.on('message', (message) => {
         commands.handleCommand(message)
     }
 });
+
+// Configuration for HTTP health check
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
+
+app.get('/', (req, res) => {
+    d = new Date()
+    console.log(`HTTP health check at:${d.getMonth()+1}/${d.getDate()}/${d.getYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`)
+    res.sendStatus(200)
+})
 
