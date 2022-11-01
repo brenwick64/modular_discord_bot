@@ -9,11 +9,11 @@ const botChannel = process.env.BOT_CHANNEL
 
 // Autonomous Features
 const ProfanityFilter = require('./automations/profanity_filter')
-const profanity = new ProfanityFilter(mode='green');
+const profanity = new ProfanityFilter(mode = 'green');
 
 //  Commands
 const CommandManager = require('./commands/command_manager')
-const commands = new CommandManager(delimeter='!');
+const commands = new CommandManager(delimeter = '!');
 
 
 client.login(loginKey);
@@ -27,7 +27,7 @@ client.on('ready', async () => {
 // Reads all messages from all channels
 client.on('message', (message) => {
     // Ignores all bot messages (including itself)
-    if (!message.author.bot){
+    if (!message.author.bot) {
         // Autonomous features
         profanity.checkMessage(message)
         // Command Handling
