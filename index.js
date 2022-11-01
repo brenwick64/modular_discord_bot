@@ -1,6 +1,6 @@
 // Imports
-const Discord = require('discord.js')
-const client = new Discord.Client();
+const { Client, GatewayIntentBits } = require('discord.js')
+const client = new Client();
 
 // Environment Variables
 require('dotenv').config()
@@ -26,6 +26,7 @@ client.on('ready', async () => {
 
 // Reads all messages from all channels
 client.on('message', (message) => {
+    console.log(message.content);
     // Ignores all bot messages (including itself)
     if (!message.author.bot) {
         // Autonomous features
