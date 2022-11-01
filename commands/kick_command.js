@@ -15,7 +15,5 @@ module.exports = async function(message) {
     }
     else {
         message.channel.send(`You do not have permissions to kick.`)
-
     }
-
 }

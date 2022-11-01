@@ -46,7 +46,7 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
     d = new Date()
-    console.log(`HTTP health check at:${d.getMonth()+1}/${d.getDate()}/${d.getYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`)
+    console.log(`HTTP health check request at '/'`)
     res.sendStatus(200)
 })
 
